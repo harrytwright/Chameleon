@@ -81,6 +81,12 @@ typedef NS_ENUM (NSInteger, UIShadeStyle) {
     UIShadeStyleDark
 };
 
+// Adding these defines reducing the overall lines of code and achives the same effect
+#ifdef UIKIT_DEFINE_AS_PROPERTIES
+#define CONVENIENCE_PROPERTY @property(class, nonatomic, readonly) UIColor *
+#else
+#define CONVENIENCE_PROPERTY + (UIColor *)
+#endif
 
 @interface UIColor (Chameleon)
 
@@ -105,689 +111,347 @@ typedef NS_ENUM (NSInteger, UIShadeStyle) {
 
 #pragma mark - Light Shades
 
-#if UIKIT_DEFINE_AS_PROPERTIES
+//#if UIKIT_DEFINE_AS_PROPERTIES
 /**
  *  Returns a flat color object whose HSB values are 0.0, 0.0, 0.17 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatBlackColor;
+CONVENIENCE_PROPERTY flatBlackColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.62, 0.50, 0.63 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatBlueColor;
+CONVENIENCE_PROPERTY flatBlueColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.07, 0.45, 0.37 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatBrownColor;
+CONVENIENCE_PROPERTY flatBrownColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.07, 0.31, 0.64 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatCoffeeColor;
+CONVENIENCE_PROPERTY flatCoffeeColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.38, 0.45, 0.37 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatForestGreenColor;
+CONVENIENCE_PROPERTY flatForestGreenColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.51, 0.10, 0.65 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatGrayColor;
+CONVENIENCE_PROPERTY flatGrayColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.40, 0.77, 0.80 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatGreenColor;
+CONVENIENCE_PROPERTY flatGreenColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.21, 0.70, 0.78 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatLimeColor;
+CONVENIENCE_PROPERTY flatLimeColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.79, 0.51, 0.71 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatMagentaColor;
+CONVENIENCE_PROPERTY flatMagentaColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.01, 0.65, 0.47 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatMaroonColor;
+CONVENIENCE_PROPERTY flatMaroonColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.47, 0.86, 0.74 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatMintColor;
+CONVENIENCE_PROPERTY flatMintColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.58, 0.45, 0.37 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatNavyBlueColor;
+CONVENIENCE_PROPERTY flatNavyBlueColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.08, 0.85, 0.90 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatOrangeColor;
+CONVENIENCE_PROPERTY flatOrangeColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.90, 0.49, 0.96 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPinkColor;
+CONVENIENCE_PROPERTY flatPinkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.83, 0.45, 0.37 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPlumColor;
+CONVENIENCE_PROPERTY flatPlumColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.62, 0.24, 0.95 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPowderBlueColor;
+CONVENIENCE_PROPERTY flatPowderBlueColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.70, 0.52, 0.77 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPurpleColor;
+CONVENIENCE_PROPERTY flatPurpleColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.02, 0.74, 0.91 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatRedColor;
+CONVENIENCE_PROPERTY flatRedColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.12, 0.25, 0.94 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatSandColor;
+CONVENIENCE_PROPERTY flatSandColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.57, 0.76, 0.86 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatSkyBlueColor;
+CONVENIENCE_PROPERTY flatSkyBlueColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.54, 0.55, 0.51 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatTealColor;
+CONVENIENCE_PROPERTY flatTealColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.99, 0.53, 0.94 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatWatermelonColor;
+CONVENIENCE_PROPERTY flatWatermelonColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.53, 0.02, 0.95 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatWhiteColor;
+CONVENIENCE_PROPERTY flatWhiteColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.13, 0.99, 1.00 and whose alpha value is 1.0.
  *
  *  @return A flat UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatYellowColor;
-#else
-
-/**
- *  Returns a flat color object whose HSB values are 0.0, 0.0, 0.17 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatBlackColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.62, 0.50, 0.63 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatBlueColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.07, 0.45, 0.37 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatBrownColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.07, 0.31, 0.64 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatCoffeeColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.38, 0.45, 0.37 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatForestGreenColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.51, 0.10, 0.65 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatGrayColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.40, 0.77, 0.80 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatGreenColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.21, 0.70, 0.78 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatLimeColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.79, 0.51, 0.71 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatMagentaColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.01, 0.65, 0.47 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatMaroonColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.47, 0.86, 0.74 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatMintColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.58, 0.45, 0.37 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatNavyBlueColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.08, 0.85, 0.90 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatOrangeColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.90, 0.49, 0.96 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPinkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.83, 0.45, 0.37 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPlumColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.62, 0.24, 0.95 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPowderBlueColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.70, 0.52, 0.77 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPurpleColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.02, 0.74, 0.91 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatRedColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.12, 0.25, 0.94 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatSandColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.57, 0.76, 0.86 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatSkyBlueColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.54, 0.55, 0.51 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatTealColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.99, 0.53, 0.94 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatWatermelonColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.53, 0.02, 0.95 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatWhiteColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.13, 0.99, 1.00 and whose alpha value is 1.0.
- *
- *  @return A flat UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatYellowColor;
-
-#endif
+CONVENIENCE_PROPERTY flatYellowColor;
 
 #pragma mark - Dark Shades
 
-#if UIKIT_DEFINE_AS_PROPERTIES
+//#if UIKIT_DEFINE_AS_PROPERTIES
 /**
  *  Returns a flat color object whose HSB values are 0.00, 0.00, 0.15 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatBlackDarkColor;
+CONVENIENCE_PROPERTY flatBlackDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.62, 0.56, 0.51 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatBlueDarkColor;
+CONVENIENCE_PROPERTY flatBlueDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.07, 0.45, 0.31 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatBrownDarkColor;
+CONVENIENCE_PROPERTY flatBrownDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.07, 0.34, 0.56 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatCoffeeDarkColor;
+CONVENIENCE_PROPERTY flatCoffeeDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.38, 0.44, 0.31 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatForestGreenDarkColor;
+CONVENIENCE_PROPERTY flatForestGreenDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.51, 0.10, 0.55 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatGrayDarkColor;
+CONVENIENCE_PROPERTY flatGrayDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.40, 0.78, 0.68 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatGreenDarkColor;
+CONVENIENCE_PROPERTY flatGreenDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.21, 0.81, 0.69 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatLimeDarkColor;
+CONVENIENCE_PROPERTY flatLimeDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.78, 0.61, 0.68 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatMagentaDarkColor;
+CONVENIENCE_PROPERTY flatMagentaDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.01, 0.68, 0.40 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatMaroonDarkColor;
+CONVENIENCE_PROPERTY flatMaroonDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.47, 0.86, 0.63 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatMintDarkColor;
+CONVENIENCE_PROPERTY flatMintDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.58, 0.45, 0.31 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatNavyBlueDarkColor;
+CONVENIENCE_PROPERTY flatNavyBlueDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.07, 1.00, 0.83 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatOrangeDarkColor;
+CONVENIENCE_PROPERTY flatOrangeDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.91, 0.57, 0.83 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPinkDarkColor;
+CONVENIENCE_PROPERTY flatPinkDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.83, 0.46, 0.31 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPlumDarkColor;
+CONVENIENCE_PROPERTY flatPlumDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.62, 0.28, 0.84 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPowderBlueDarkColor;
+CONVENIENCE_PROPERTY flatPowderBlueDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.70, 0.56, 0.64 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatPurpleDarkColor;
+CONVENIENCE_PROPERTY flatPurpleDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.02, 0.78, 0.75 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatRedDarkColor;
+CONVENIENCE_PROPERTY flatRedDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.12, 0.30, 0.84 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatSandDarkColor;
+CONVENIENCE_PROPERTY flatSandDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.57, 0.78, 0.73 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatSkyBlueDarkColor;
+CONVENIENCE_PROPERTY flatSkyBlueDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.54, 0.54, 0.45 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatTealDarkColor;
+CONVENIENCE_PROPERTY flatTealDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.99, 0.61, 0.85 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatWatermelonDarkColor;
+CONVENIENCE_PROPERTY flatWatermelonDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.57, 0.05, 0.78 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatWhiteDarkColor;
+CONVENIENCE_PROPERTY flatWhiteDarkColor;
 
 /**
  *  Returns a flat color object whose HSB values are 0.11, 1.00, 1.00 and whose alpha value is 1.0.
  *
  *  @return A flat @c UIColor object in the HSB colorspace.
  */
-@property(class, nonatomic, readonly) UIColor *flatYellowDarkColor;
-#else
-
-/**
- *  Returns a flat color object whose HSB values are 0.00, 0.00, 0.15 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatBlackDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.62, 0.56, 0.51 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatBlueDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.07, 0.45, 0.31 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatBrownDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.07, 0.34, 0.56 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatCoffeeDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.38, 0.44, 0.31 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatForestGreenDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.51, 0.10, 0.55 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatGrayDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.40, 0.78, 0.68 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatGreenDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.21, 0.81, 0.69 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatLimeDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.78, 0.61, 0.68 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatMagentaDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.01, 0.68, 0.40 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatMaroonDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.47, 0.86, 0.63 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatMintDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.58, 0.45, 0.31 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatNavyBlueDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.07, 1.00, 0.83 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatOrangeDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.91, 0.57, 0.83 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPinkDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.83, 0.46, 0.31 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPlumDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.62, 0.28, 0.84 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPowderBlueDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.70, 0.56, 0.64 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatPurpleDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.02, 0.78, 0.75 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatRedDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.12, 0.30, 0.84 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatSandDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.57, 0.78, 0.73 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatSkyBlueDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.54, 0.54, 0.45 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatTealDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.99, 0.61, 0.85 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatWatermelonDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.57, 0.05, 0.78 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatWhiteDarkColor;
-
-/**
- *  Returns a flat color object whose HSB values are 0.11, 1.00, 1.00 and whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- */
-+ (UIColor *)flatYellowDarkColor;
-#endif
+CONVENIENCE_PROPERTY flatYellowDarkColor;
 
 #pragma mark - Randomizing Colors
-#if UIKIT_DEFINE_AS_PROPERTIES
 /**
  *  Returns a randomly generated flat color object whose alpha value is 1.0.
  *
@@ -795,19 +459,7 @@ typedef NS_ENUM (NSInteger, UIShadeStyle) {
  *
  *  @since 1.0
  */
-
-@property(class, nonatomic, readonly) UIColor *randomFlatColor;
-#else
-/**
- *  Returns a randomly generated flat color object whose alpha value is 1.0.
- *
- *  @return A flat @c UIColor object in the HSB colorspace.
- *
- *  @since 1.0
- */
-
-+ (UIColor *)randomFlatColor;
-#endif
+CONVENIENCE_PROPERTY randomFlatColor;
 
 /**
  *  @author Vicc Alexander
